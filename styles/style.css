@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Huninn&family=Merienda:wght@300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+HR+Lijeva:wght@100..400&family=Poetsen+One&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    font-family: 'Huninn', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    caret-color: transparent;
+
+}
+
+.wrapper {
+    position: relative;
+    margin: 40px auto;
+    width: 80%;
+}
+
+
+.drawingPlanet {
+    width: 280px;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+.destination {
+    width: 180px;
+    right: 0;
+    top: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+.cont {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.desk {
+    display: block;
+    height: 650px;
+}
+.searchLocation{
+    position: absolute;
+    width: 70px;
+    left: 10px;
+    top: 0;
+    z-index: 4;
+    cursor: pointer;
+}
+.searchLocation:hover{
+    width: 75px;
+}
+.roadmap {
+    position: absolute;
+    width: 70px;
+    right: 10px;
+    bottom: 0;
+    z-index: 4;
+    cursor: pointer;
+}
+
+.pencil {
+    position: absolute;
+    width: 50px;
+    right: 10px;
+    bottom: 32px;
+    z-index: 6;
+    display: none;
+}
+
+.newTravel {
+    font-size: 1.5rem;
+    display: none;
+    position: absolute;
+    background: rgba(71, 71, 71, 0.82);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+}
+
+.sticker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 600px;
+    z-index: 12;
+    position: relative;
+}
+
+form {
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 600px;
+    z-index: 15;
+    position: absolute;
+}
+
+form input {
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    outline: none;
+    height: 40px;
+    width: 130px;
+    border-radius: 40px;
+    background: #fff;
+    border: 2px solid rgba(250, 89, 12, 0.94);
+    color: #ffad62;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+#addNewTravel::after {
+    content: "Add travel";
+}
+
+#addNewTravel.validate {
+    background-color: #fa590c;
+    color: white;
+}
+
+#addNewTravel.validate::after {
+    content: "\2713";
+    font-size: 16px;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+

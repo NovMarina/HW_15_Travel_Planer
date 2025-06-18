@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <title>Title</title>
+</head>
+<body>
+<img src="assers/drawingPlanet.jpg" alt="drawingPlanet" class="drawingPlanet">
+<img src="assers/destination.png" alt="destination" class="destination">
+<div class="wrapper">
+    <div class="cont">
+        <img src="assers/desk.jpg" alt="desk" class="desk">
+        <img src="assers/roadmap.png" alt="roadmap" class="roadmap">
+        <img src="assers/pencil.png" alt="pencil" class="pencil">
+        <img src="assers/searchLocation.png" class="searchLocation" alt="searchLocation">
+    </div>
+
+</div>
+<div class="newTravel">
+    <img src="assers/sticker.png" alt="sticker" class="sticker">
+    <form>
+        <label for="destTO">To: </label>
+        <input type="text" placeholder="Enter destination TO" name="toDest" id="destTO" required>
+        <label for="startDate">Start date: </label>
+        <input type="date" name="dateStart" id="startDate" required>
+        <label for="finishDate">Finish date: </label>
+        <input type="date" name="dateFinish" id="finishDate">
+        <label for="budget">Budget: </label>
+        <input type="number" min="0" placeholder="Enter budget" name="budget" id="budget">
+        <div class="btns">
+            <button class="btn" id="addNewTravel"></button>
+            <button class="btn" id="backBtn">Back</button>
+        </div>
+    </form>
+</div>
+<script src="scripts/script.js"></script>
+<script src="scripts/formAction.js"></script>
+<script src="scripts/dataProcessing.js"></script>
+</body>
+</html>
