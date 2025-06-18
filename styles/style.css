@@ -218,3 +218,39 @@ form input {
     z-index: 15;
     position: absolute;
 }
+
+/*--------------------------------------------*/
+.searchPanel {
+    position: absolute;
+    top: 5px;
+    left: 80px;
+    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.searchPanel div {
+    height: 40px;
+    font-size: 0.8rem;
+    border-radius: 40px;
+    background: #fff;
+    box-sizing: border-box;
+    border: 2px solid rgba(250, 89, 12, 0.94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    outline: none;
+}
+
+#searchInput {
+    margin: 0.3rem;
+    border-radius: 5px;
+    width: 8rem;
+}
+
+#searchByDestinationBtn {
+    height: 30px;
+    width: 80px;
+}

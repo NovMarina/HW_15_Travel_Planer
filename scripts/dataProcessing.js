@@ -8,10 +8,16 @@ export class Travel {
     constructor(to, startDate, finishDate, budget) {
         this.#to = to;
         this.#startDate = startDate;
-        if (finishDate && (new Date(finishDate) > new Date(startDate))) {
-            this.#finishDate = finishDate;
+
+        if (finishDate) {
+            if (new Date(finishDate) >= new Date(startDate)) {
+                this.#finishDate = finishDate;
+            } else {
+                alert("Finish Date cannot be earlier than Start Date!");
+            }
         }
-        if (budget) {
+
+        if (budget && budget > 0) {
             this.#budget = budget;
         }
     }
@@ -40,14 +46,14 @@ export class Travel {
     setFinishDate(finishDate) {
         if (new Date(finishDate) > new Date(this.#startDate))
             this.#finishDate = finishDate;
+        else alert("Finish Date cannot be earlier than Start Date!")
     }
 
     setStartDate(startDate) {
-        if (!this.#finishDate) {
+        if (!this.#finishDate || new Date(startDate) <= new Date(this.#finishDate)) {
             this.#startDate = startDate;
         } else {
-            if (new Date(startDate) < new Date(this.#finishDate))
-                this.#startDate = startDate;
+            alert("Start Date cannot be later than Finish Date!");
         }
     }
 
@@ -83,7 +89,7 @@ export class TravelPlaner {
 
     getByTo(to) {
         return this.#travels.filter(item =>
-            item.getTo().includes(to.trim()))
+            item.getTo().trim().toLowerCase().includes(to.trim().toLowerCase()))
 
     }
 }

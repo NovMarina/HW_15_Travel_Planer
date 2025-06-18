@@ -11,6 +11,10 @@ const budgetNum = document.getElementById('budget');
 const deskNotes = document.querySelector('.deskNotes');
 const travelView = document.querySelector('.travelView');
 const info = document.querySelector('.info');
+const showAllBtn = document.getElementById('showAllBtn');
+const searchByDestinationBtn = document.getElementById('searchByDestinationBtn');
+const searchInput = document.getElementById('searchInput');
+
 //------------------------------------------------------------------------
 const travelPlaner = new TravelPlaner();
 button.addEventListener('click', function (e) {
@@ -69,5 +73,23 @@ function addNoteToDesk(travel) {
 
     deskNotes.appendChild(note);
 }
+
+showAllBtn.addEventListener('click', () => {
+    deskNotes.innerHTML = '';
+    travelPlaner.getAllTravels().forEach(travel => {
+        addNoteToDesk(travel);
+    });
+});
+
+searchByDestinationBtn.addEventListener('click', () => {
+    const inputSearch = searchInput.value.trim().toLowerCase();
+    if (!inputSearch) return;
+
+    const results = travelPlaner.getByTo(inputSearch);
+    deskNotes.innerHTML = '';
+    results.forEach(travel => {
+        addNoteToDesk(travel);
+    });
+});
 
 

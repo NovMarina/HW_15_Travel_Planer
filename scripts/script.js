@@ -2,6 +2,8 @@ const container = document.querySelector('.cont');
 const roadmap = document.querySelector(".roadmap");
 const pencil = document.querySelector(".pencil");
 const newTravel = document.querySelector(".newTravel");
+const searchLocation = document.querySelector(".searchLocation");
+const searchPanel = document.querySelector('.searchPanel');
 
 container.addEventListener('mouseover', function (e) {
     if (e.target.classList.contains('roadmap') || e.target.classList.contains('pencil')) {
@@ -24,3 +26,12 @@ container.addEventListener('click', function (e) {
         newTravel.style.display = "block";
     }
 });
+
+searchLocation.addEventListener('click', () => {
+        if (searchPanel.style.display === 'flex') {
+            searchPanel.style.display = 'none';
+        } else {
+            searchPanel.style.display = 'flex';
+        }
+    }
+)
