@@ -1,4 +1,4 @@
-class Travel {
+export class Travel {
 
     #to
     #startDate
@@ -8,7 +8,7 @@ class Travel {
     constructor(to, startDate, finishDate, budget) {
         this.#to = to;
         this.#startDate = startDate;
-        if (finishDate) {
+        if (finishDate && (new Date(finishDate) > new Date(startDate))) {
             this.#finishDate = finishDate;
         }
         if (budget) {
@@ -62,7 +62,7 @@ class Travel {
     }
 }
 
-class TravelPlaner {
+export class TravelPlaner {
     #travels
 
     constructor(travels) {
