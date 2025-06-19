@@ -38,19 +38,25 @@ export class Travel {
         return this.#budget;
     }
 
+    setTo(to) {
+        if (to.trim() && to != this.#to) {
+            this.#to = to.trim();
+        }
+    }
+
     setBudget(budget) {
-        if (budget > 0)
+        if (+budget > 0 && budget != this.#budget)
             this.#budget = budget;
     }
 
     setFinishDate(finishDate) {
-        if (new Date(finishDate) > new Date(this.#startDate))
+        if ((new Date(finishDate) > new Date(this.#startDate)) && (finishDate != this.#finishDate))
             this.#finishDate = finishDate;
         else alert("Finish Date cannot be earlier than Start Date!")
     }
 
     setStartDate(startDate) {
-        if (!this.#finishDate || new Date(startDate) <= new Date(this.#finishDate)) {
+        if ((!this.#finishDate || new Date(startDate) <= new Date(this.#finishDate)) && (startDate != this.#startDate)) {
             this.#startDate = startDate;
         } else {
             alert("Start Date cannot be later than Finish Date!");
